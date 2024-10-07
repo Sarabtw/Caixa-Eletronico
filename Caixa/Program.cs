@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 
 class Program
@@ -19,7 +19,7 @@ class Program
             Console.WriteLine("3. Extrato");
             Console.WriteLine("4. Transferência");
             Console.WriteLine("5. Sair");
-            Console.Write("Escolha um tipo de serviço descrito acima:");
+            Console.Write("Escolha um tipo de serviço descrito acima: ");
             int opcao = int.Parse(Console.ReadLine());
 
             switch (opcao)
