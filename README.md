@@ -1,5 +1,16 @@
 # Caixa-Eletronico
-Etapas Implementadas
+
+## O que foi Utilizado (Ferramentas)
+
+Visual Studio Code: Utilizado como ambiente de desenvolvimento integrado (IDE) para editar e compilar o código em C#.
+
+.NET Core SDK: Para compilar e executar o programa.
+
+Git: Utilizado para controle de versão e upload do código no GitHub.
+
+GitHub: Plataforma para hospedagem do código e controle de versão.
+
+## Etapas Implementadas
 
 1. Criação da Estrutura Inicial:
 
@@ -42,28 +53,7 @@ Implementação da funcionalidade que gera um arquivo .txt com o extrato da cont
 A interface foi construída usando a entrada e saída de dados pelo console, permitindo fácil interação do usuário.
 
 
-
-
-
----
-
-O que foi Utilizado (Ferramentas)
-
-Visual Studio Code: Utilizado como ambiente de desenvolvimento integrado (IDE) para editar e compilar o código em C#.
-
-.NET Core SDK: Para compilar e executar o programa.
-
-Git: Utilizado para controle de versão e upload do código no GitHub.
-
-GitHub: Plataforma para hospedagem do código e controle de versão.
-
-
-
----
-
-Backlog
-
-1. Versão Atual (MVP):
+## Backlog
 
 Criar uma conta com nome e tipo de conta.
 
@@ -71,35 +61,11 @@ Funcionalidade de saque.
 
 Funcionalidade de depósito.
 
-Visualização de extrato.
+Implementar um sistema de login com senha para os usuários.
 
-Transferência entre duas contas.
+Definir limites diários de saque por usuário.
 
-Salvar extrato em arquivo .txt.
-
-
-
-2. Melhorias Futuras (Backlog):
-
-Autenticação: Implementar um sistema de login com senha para os usuários.
-
-Multiplas Contas: Permitir o cadastro e a manipulação de múltiplas contas dentro do mesmo programa.
-
-Limites de Saque: Definir limites diários de saque por usuário.
-
-Menu de Configurações: Permitir que o usuário ajuste detalhes da conta (como alterar a senha).
-
-Histórico Completo de Transações: Guardar o histórico de todas as transações realizadas, e não apenas o saldo final.
-
-Interface Gráfica: Substituir a interação via console por uma interface gráfica com botões e telas.
-
-
-
-
-
----
-
-Conclusão
+## Conclusão
 
 O projeto implementado cumpre os requisitos básicos de um simulador de caixa eletrônico, permitindo operações como saque, depósito, extrato e transferências entre contas. Além disso, foi acrescentada a funcionalidade de salvar o extrato da conta em um arquivo de texto, fornecendo uma experiência mais realista ao usuário.
 
