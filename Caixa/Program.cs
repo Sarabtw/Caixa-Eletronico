@@ -38,14 +38,14 @@ class Program
                     break;
                 case 2:
                     Console.WriteLine("Digite o número da conta e a agência: (Ex: Número da conta: 12340, Agência: 1234567)");
-                    int numeros = int.Parse(Console.ReadLine());
+                     numeros = int.Parse(Console.ReadLine());
 
                     Console.Write("Qual valor você deseja depositar? ");
                     double valorDeposito = double.Parse(Console.ReadLine());
                     conta1.Depositar(valorDeposito);
 
                     Console.WriteLine("Confirme o deposito com senha: ");
-                    int senha = int.Parse(Console.ReadLine());
+                     senha = int.Parse(Console.ReadLine());
                     break;
 
                 case 3:
@@ -53,21 +53,21 @@ class Program
                     conta1.SalvarExtratoEmArquivo();
 
                     Console.WriteLine("Digite o número da conta e a agência: (Ex: Número da conta: 12340, Agência: 1234567)");
-                    int numeros = int.Parse(Console.ReadLine());
+                     numeros = int.Parse(Console.ReadLine());
 
                     Console.WriteLine("Confirme a ação com senha: ");
-                    int senha = int.Parse(Console.ReadLine());
+                    senha = int.Parse(Console.ReadLine());
                     break;
                 case 4:
                     Console.WriteLine("Digite o número da conta e a agência: (Ex: Número da conta: 12340, Agência: 1234567)");
-                    int numeros = int.Parse(Console.ReadLine());
+                     numeros = int.Parse(Console.ReadLine());
 
                     Console.Write("Informe o valor da transferência: ");
                     double valorTransferencia = double.Parse(Console.ReadLine());
                     conta1.Transferir(conta2, valorTransferencia);
 
                     Console.WriteLine("Confirme a transferência com senha: ");
-                    int senha = int.Parse(Console.ReadLine());
+                     senha = int.Parse(Console.ReadLine());
                     break;
                 case 5:
                     sair = true;
