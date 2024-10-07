@@ -34,10 +34,11 @@ class Program
                     Console.Write("Qual valor você deseja sacar? ");
                     double valorSaque = double.Parse(Console.ReadLine());
                     conta1.Sacar(valorSaque);
-
-                    Console.WriteLine("Confirme o saque com senha: ");
-                    int senha = int.Parse(Console.ReadLine());
-
+                    if (valorSaque > 0)
+                    {
+                     Console.WriteLine("Confirme o saque com senha: ");
+                     int senha = int.Parse(Console.ReadLine());
+                    }
                     break;
                 case 2:
                     Console.WriteLine("Digite o número da conta: (Ex: Número da conta: 12340)");
@@ -49,9 +50,11 @@ class Program
                     Console.Write("Qual valor você deseja depositar? ");
                     double valorDeposito = double.Parse(Console.ReadLine());
                     conta1.Depositar(valorDeposito);
-
-                    Console.WriteLine("Confirme o deposito com senha: ");
+                    if (valorDeposito > 0)
+                    {
+                     Console.WriteLine("Confirme o deposito com senha: ");
                      senha = int.Parse(Console.ReadLine());
+                    }
                     break;
 
                 case 3:
@@ -77,9 +80,12 @@ class Program
                     Console.Write("Informe o valor da transferência: ");
                     double valorTransferencia = double.Parse(Console.ReadLine());
                     conta1.Transferir(conta2, valorTransferencia);
-
-                    Console.WriteLine("Confirme a transferência com senha: ");
-                     senha = int.Parse(Console.ReadLine());
+                     
+                     if (valorTransferencia > 0)
+                     {
+                       Console.WriteLine("Confirme a transferência com senha: ");
+                       senha = int.Parse(Console.ReadLine());
+                     } 
                     break;
                 case 5:
                     sair = true;
