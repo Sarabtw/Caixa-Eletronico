@@ -51,11 +51,8 @@ class Program
                     Console.WriteLine("Opção inválida.");
                     break;
             }
-            if (!sair)
-            {
-                Console.WriteLine("Pressione qualquer tecla para continuar...");
-                Console.ReadKey();
-            }
+
+           
             
         }
     }
