@@ -29,7 +29,7 @@ class Program
                     int conta = int.Parse(Console.ReadLine());
 
                     Console.WriteLine("Digite o número da agência: (Ex: Agência: 1234567)");
-                    int conta = int.Parse(Console.ReadLine());
+                    int agencia = int.Parse(Console.ReadLine());
 
                     Console.Write("Qual valor você deseja sacar? ");
                     double valorSaque = double.Parse(Console.ReadLine());
@@ -44,7 +44,7 @@ class Program
                     int conta = int.Parse(Console.ReadLine());
 
                     Console.WriteLine("Digite o número da agência: (Ex: Agência: 1234567)");
-                    int conta = int.Parse(Console.ReadLine());
+                    int agencia = int.Parse(Console.ReadLine());
 
                     Console.Write("Qual valor você deseja depositar? ");
                     double valorDeposito = double.Parse(Console.ReadLine());
@@ -62,7 +62,7 @@ class Program
                     int conta = int.Parse(Console.ReadLine());
 
                     Console.WriteLine("Digite o número da agência: (Ex: Agência: 1234567)");
-                    int conta = int.Parse(Console.ReadLine());
+                    int agencia = int.Parse(Console.ReadLine());
 
                     Console.WriteLine("Confirme a ação com senha: ");
                     senha = int.Parse(Console.ReadLine());
@@ -72,7 +72,7 @@ class Program
                     int conta = int.Parse(Console.ReadLine());
 
                     Console.WriteLine("Digite o número da agência: (Ex: Agência: 1234567)");
-                    int conta = int.Parse(Console.ReadLine());
+                    int agencia = int.Parse(Console.ReadLine());
 
                     Console.Write("Informe o valor da transferência: ");
                     double valorTransferencia = double.Parse(Console.ReadLine());
