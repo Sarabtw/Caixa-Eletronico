@@ -28,13 +28,13 @@ class Program
             {
                 case 1:
                     Console.WriteLine("Digite o número da conta: (Ex: Número da conta: 12340)");
-                    int conta = int.Parse(Console.ReadLine());
+                    int conta = Console.ReadLine();
 
                     Console.WriteLine("Digite o número da agência: (Ex: Agência: 1234567)");
                     int agencia = Console.ReadLine();
 
                     Console.Write("Qual valor você deseja sacar? ");
-                    double valorSaque = double.Parse(Console.ReadLine());
+                    double valorSaque = Console.ReadLine();
                     conta1.Sacar(valorSaque);
                     if (valorSaque > 0)
                     {
@@ -44,13 +44,13 @@ class Program
                     break;
                 case 2:
                     Console.WriteLine("Digite o número da conta: (Ex: Número da conta: 12340)");
-                    conta = iConsole.ReadLine();
+                    conta = Console.ReadLine();
 
                     Console.WriteLine("Digite o número da agência: (Ex: Agência: 1234567)");
                      agencia = Console.ReadLine();
 
                     Console.Write("Qual valor você deseja depositar? ");
-                    double valorDeposito = double.Parse(Console.ReadLine());
+                    double valorDeposito = Console.ReadLine();
                     conta1.Depositar(valorDeposito);
                     if (valorDeposito > 0)
                     {
@@ -80,13 +80,13 @@ class Program
                     agencia = Console.ReadLine();
 
                     Console.Write("Informe o valor da transferência: ");
-                    double valorTransferencia = double.Parse(Console.ReadLine());
+                    double valorTransferencia = Console.ReadLine();
                     conta1.Transferir(conta2, valorTransferencia);
                      
                      if (valorTransferencia > 0)
                      {
                        Console.WriteLine("Confirme a transferência com senha: ");
-                       senha = int.Parse(Console.ReadLine());
+                       senha = Console.ReadLine();
                      } 
                     break;
                 case 5:
