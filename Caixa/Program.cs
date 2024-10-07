@@ -41,10 +41,10 @@ class Program
                     break;
                 case 2:
                     Console.WriteLine("Digite o número da conta: (Ex: Número da conta: 12340)");
-                    int conta = int.Parse(Console.ReadLine());
+                    conta = int.Parse(Console.ReadLine());
 
                     Console.WriteLine("Digite o número da agência: (Ex: Agência: 1234567)");
-                    int agencia = int.Parse(Console.ReadLine());
+                     agencia = int.Parse(Console.ReadLine());
 
                     Console.Write("Qual valor você deseja depositar? ");
                     double valorDeposito = double.Parse(Console.ReadLine());
@@ -59,20 +59,20 @@ class Program
                     conta1.SalvarExtratoEmArquivo();
 
                     Console.WriteLine("Digite o número da conta: (Ex: Número da conta: 12340)");
-                    int conta = int.Parse(Console.ReadLine());
+                    conta = int.Parse(Console.ReadLine());
 
                     Console.WriteLine("Digite o número da agência: (Ex: Agência: 1234567)");
-                    int agencia = int.Parse(Console.ReadLine());
+                     agencia = int.Parse(Console.ReadLine());
 
                     Console.WriteLine("Confirme a ação com senha: ");
                     senha = int.Parse(Console.ReadLine());
                     break;
                 case 4:
                     Console.WriteLine("Digite o número da conta: (Ex: Número da conta: 12340)");
-                    int conta = int.Parse(Console.ReadLine());
+                     conta = int.Parse(Console.ReadLine());
 
                     Console.WriteLine("Digite o número da agência: (Ex: Agência: 1234567)");
-                    int agencia = int.Parse(Console.ReadLine());
+                    agencia = int.Parse(Console.ReadLine());
 
                     Console.Write("Informe o valor da transferência: ");
                     double valorTransferencia = double.Parse(Console.ReadLine());
