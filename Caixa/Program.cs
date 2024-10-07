@@ -32,7 +32,7 @@ class Program
                     double valorSaque = double.Parse(Console.ReadLine());
                     conta1.Sacar(valorSaque);
 
-                    Console.WriteLine("Confirme o saque com senha: ")
+                    Console.WriteLine("Confirme o saque com senha: ");
                     int senha = int.Parse(Console.ReadLine());
 
                     break;
@@ -44,7 +44,7 @@ class Program
                     double valorDeposito = double.Parse(Console.ReadLine());
                     conta1.Depositar(valorDeposito);
 
-                    Console.WriteLine("Confirme o deposito com senha: ")
+                    Console.WriteLine("Confirme o deposito com senha: ");
                     int senha = int.Parse(Console.ReadLine());
                     break;
 
@@ -55,7 +55,7 @@ class Program
                     Console.WriteLine("Digite o número da conta e a agência: (Ex: Número da conta: 12340, Agência: 1234567)");
                     int numeros = int.Parse(Console.ReadLine());
 
-                    Console.WriteLine("Confirme a ação com senha: ")
+                    Console.WriteLine("Confirme a ação com senha: ");
                     int senha = int.Parse(Console.ReadLine());
                     break;
                 case 4:
