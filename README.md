@@ -70,5 +70,3 @@ Definir limites diários de saque por usuário.
 O projeto implementado cumpre os requisitos básicos de um simulador de caixa eletrônico, permitindo operações como saque, depósito, extrato e transferências entre contas. Além disso, foi acrescentada a funcionalidade de salvar o extrato da conta em um arquivo de texto, fornecendo uma experiência mais realista ao usuário.
 
 As etapas de desenvolvimento incluíram o uso de estruturas de decisão para validações e laços de repetição para manter o sistema ativo até que o usuário escolha sair. A utilização de uma ferramenta leve como o Visual Studio Code, em conjunto com o .NET Core, permitiu um ambiente ágil de desenvolvimento.
-
-Este projeto pode ser facilmente estendido, e o backlog definido aponta para diversas funcionalidades avançadas que podem ser implementadas para simular um caixa eletrônico mais completo.
