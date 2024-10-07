@@ -25,8 +25,11 @@ class Program
             switch (opcao)
             {
                 case 1:
-                     Console.WriteLine("Digite o número da conta e a agência: (Ex: Número da conta: 12340, Agência: 1234567)");
-                    int numeros = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Digite o número da conta: (Ex: Número da conta: 12340)");
+                    int conta = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Digite o número da agência: (Ex: Agência: 1234567)");
+                    int conta = int.Parse(Console.ReadLine());
 
                     Console.Write("Qual valor você deseja sacar? ");
                     double valorSaque = double.Parse(Console.ReadLine());
@@ -37,8 +40,11 @@ class Program
 
                     break;
                 case 2:
-                    Console.WriteLine("Digite o número da conta e a agência: (Ex: Número da conta: 12340, Agência: 1234567)");
-                     numeros = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Digite o número da conta: (Ex: Número da conta: 12340)");
+                    int conta = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Digite o número da agência: (Ex: Agência: 1234567)");
+                    int conta = int.Parse(Console.ReadLine());
 
                     Console.Write("Qual valor você deseja depositar? ");
                     double valorDeposito = double.Parse(Console.ReadLine());
@@ -52,15 +58,21 @@ class Program
                     conta1.ExibirExtrato();
                     conta1.SalvarExtratoEmArquivo();
 
-                    Console.WriteLine("Digite o número da conta e a agência: (Ex: Número da conta: 12340, Agência: 1234567)");
-                     numeros = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Digite o número da conta: (Ex: Número da conta: 12340)");
+                    int conta = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Digite o número da agência: (Ex: Agência: 1234567)");
+                    int conta = int.Parse(Console.ReadLine());
 
                     Console.WriteLine("Confirme a ação com senha: ");
                     senha = int.Parse(Console.ReadLine());
                     break;
                 case 4:
-                    Console.WriteLine("Digite o número da conta e a agência: (Ex: Número da conta: 12340, Agência: 1234567)");
-                     numeros = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Digite o número da conta: (Ex: Número da conta: 12340)");
+                    int conta = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Digite o número da agência: (Ex: Agência: 1234567)");
+                    int conta = int.Parse(Console.ReadLine());
 
                     Console.Write("Informe o valor da transferência: ");
                     double valorTransferencia = double.Parse(Console.ReadLine());
