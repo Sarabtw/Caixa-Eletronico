@@ -103,125 +103,130 @@ class Program
     }
 }
 
-
-
-
 class Conta
 {
-private string titular;
-private string tipoConta;
-private double saldo;
-private string senha;
-private double limite;
-public Conta(string titular, string tipoConta, string senha)
-{
-this.titular = titular;
-this.tipoConta = tipoConta;
-this.saldo = 0;
-this.senha = senha;
-this.limite = 1000; 
-}
+    private string titular;
+    private string tipoConta;
+    private double saldo;
+    private double limite;
+    private string senha;
+    private string numeroConta;
 
-public bool Autenticar(string senha)
-{
-return this.senha == senha;
-}
+    public Conta(string titular, string tipoConta, string senha, string numeroConta, double limite)
+    {
+        this.titular = titular;
+        this.tipoConta = tipoConta;
+        this.saldo = 0;
+        this.senha = senha;
+        this.numeroConta = numeroConta;
+        this.limite = limite;
+    }
 
-public void Sacar(double valor)
-{
-if (valor > saldo + limite)
-{
-Console.WriteLine("Saldo insuficiente.");
-}
-else if (valor <= 0)
-{
-Console.WriteLine("Valor inválido.");
-}
-else
-{
-saldo -= valor;
-Console.WriteLine($"Saque de {valor:C} realizado com sucesso.");
-}
-}
+    public bool Autenticar(string senhaInput)
+    {
+        return senhaInput == senha;
+    }
 
-public void Depositar(double valor)
-{
-if (valor <= 0)
-{
-Console.WriteLine("Valor inválido.");
-}
-else
-{
-saldo += valor;
-Console.WriteLine($"Depósito de {valor:C} realizado com sucesso.");
-}
-}
+    public void Sacar(double valor)
+    {
+        if (valor > saldo + limite)
+        {
+            Console.WriteLine("Saldo insuficiente e limite excedido.");
+        }
+        else if (valor <= 0)
+        {
+            Console.WriteLine("Valor inválido.");
+        }
+        else
+        {
+            saldo -= valor;
+            Console.WriteLine($"Saque de {valor:C} realizado com sucesso.");
+        }
+    }
 
-public void ExibirExtrato()
-{
-Console.WriteLine($"Titular: {titular}");
-Console.WriteLine($"Tipo de Conta: {tipoConta}");
-Console.WriteLine($"Saldo Atual: {saldo:C}");
-}
+    public void Depositar(double valor)
+    {
+        if (valor <= 0)
+        {
+            Console.WriteLine("Valor inválido.");
+        }
+        else
+        {
+            saldo += valor;
+            Console.WriteLine($"Depósito de {valor:C} realizado com sucesso.");
+        }
+    }
 
-public void Transferir(Conta destino, double valor)
-{
-double taxa = 0.05; 
-double totalTransferencia = valor + taxa;
-if (totalTransferencia > saldo)
-{
-Console.WriteLine("Saldo insuficiente para transferência.");
-}
-else if (valor <= 0)
-{
-Console.WriteLine("Valor inválido.");
-}
-else
-{
-saldo -= totalTransferencia;
-destino.Depositar(valor);
-Console.WriteLine($"Transferência de {valor:C} para {destino.titular} realizada com sucesso.");
-}
-}
+    public void ExibirExtrato()
+    {
+        Console.WriteLine($"Titular: {titular}");
+        Console.WriteLine($"Tipo de Conta: {tipoConta}");
+        Console.WriteLine($"Número da Conta: {numeroConta}");
+        Console.WriteLine($"Saldo Atual: {saldo:C}");
+        Console.WriteLine($"Limite: {limite:C}");
+    }
 
-public void Aplicar(int tipo)
-{
-double valorAplicacao;
-Console.Write("Informe o valor para aplicar: ");
-valorAplicacao = double.Parse(Console.ReadLine());
-if (valorAplicacao > saldo)
-{
-Console.WriteLine("Saldo insuficiente para aplicação.");
-return;
-}
+    public void Transferir(Conta destino, double valor)
+    {
+        double taxa = valor * 0.0005;
+        double totalTransferencia = valor + taxa;
 
-saldo -= valorAplicacao;
-if (tipo == 1)
-{
-Console.WriteLine($"Valor de {valorAplicacao:C} aplicado na Poupança.");
+        if (totalTransferencia > saldo + limite)
+        {
+            Console.WriteLine("Saldo insuficiente para transferência.");
+        }
+        else if (valor <= 0)
+        {
+            Console.WriteLine("Valor inválido.");
+        }
+        else
+        {
+            saldo -= totalTransferencia;
+            destino.Depositar(valor);
+            Console.WriteLine($"Transferência de {valor:C} para {destino.titular} realizada com sucesso.");
+            Console.WriteLine($"Taxa de {taxa:C} cobrada.");
+        }
+    }
 
-}
-else if (tipo == 2)
-{
-Console.WriteLine($"Valor de {valorAplicacao:C} aplicado em CDB.");
+    public void AplicacaoFinanceira(int tipo, double valor)
+    {
+        if (valor > saldo)
+        {
+            Console.WriteLine("Saldo insuficiente para aplicação.");
+        }
+        else if (tipo == 1)
+        {
+            saldo -= valor;
+            double rendimento = valor * 0.005; 
+            saldo += rendimento;
+            Console.WriteLine($"Aplicação de {valor:C} na Poupança realizada. Rendimento: {rendimento:C}");
+        }
+        else if (tipo == 2)
+        {
+            saldo -= valor;
+            double rendimento = valor * 0.01; 
+            saldo += rendimento;
+            Console.WriteLine($"Aplicação de {valor:C} no CDB realizada. Rendimento: {rendimento:C}");
+        }
+        else
+        {
+            Console.WriteLine("Tipo de aplicação inválida.");
+        }
+    }
 
-}
-else
-{
-Console.WriteLine("Opção de aplicação inválida.");
-}
-}
-
-public void SalvarExtratoEmArquivo()
-{
-string nomeArquivo = $"{titular}_extrato.txt";
-using (StreamWriter writer = new StreamWriter(nomeArquivo))
-{
-writer.WriteLine($"Titular: {titular}");
-writer.WriteLine($"Tipo de Conta: {tipoConta}");
-writer.WriteLine($"Saldo Atual: {saldo:C}");
-}
-
-Console.WriteLine($"Extrato salvo em arquivo: {nomeArquivo}");
-}
+    public void SalvarExtratoEmArquivo()
+    {
+        string nomeArquivo = $"{titular}_extrato.txt";
+        using (StreamWriter writer = new StreamWriter(nomeArquivo))
+        {
+            writer.WriteLine($"Titular: {titular}");
+            writer.WriteLine($"Tipo de Conta: {tipoConta}");
+            writer.WriteLine($"Número da Conta: {numeroConta}");
+            writer.WriteLine($"Saldo Atual: {saldo:C}");
+            writer.WriteLine($"Limite: {limite:C}");
+            writer.WriteLine($"Data: {DateTime.Now:dd/MM/yyyy}");
+            writer.WriteLine($"Hora: {DateTime.Now:HH:mm:ss}");
+        }
+        Console.WriteLine($"Extrato salvo em: {nomeArquivo}");
+    }
 }
