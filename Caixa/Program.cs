@@ -3,12 +3,44 @@ using System.IO;
 
 class Program
 {
-static void Main(string[] args)
-{
-Conta conta1 = new Conta("João", "Corrente", "123456");
-Conta conta2 = new Conta("Maria", "Poupança", "654321");
-bool sair = false;
-while (!sair)
+    static void Main(string[] args)
+    {
+        
+        Console.Write("Digite o nome do titular da conta: ");
+        string titular = Console.ReadLine();
+
+        Console.Write("Digite o tipo de conta (Corrente/Poupança): ");
+        string tipoConta = Console.ReadLine();
+
+        string senha;
+        do
+        {
+            Console.Write("Crie uma senha para sua conta (mínimo 6 dígitos): ");
+            senha = Console.ReadLine();
+        } while (senha.Length < 6);
+
+        Console.Write("Digite o número da conta: ");
+        string numeroConta = Console.ReadLine();
+
+        Console.Write("Informe o limite da conta: ");
+        double limite = double.Parse(Console.ReadLine());
+
+        Conta conta = new Conta(titular, tipoConta, senha, numeroConta, limite);
+
+        
+        Console.Write("Digite a senha para acessar a conta: ");
+        string senhaInput = Console.ReadLine();
+
+        
+        if (!conta.Autenticar(senhaInput))
+        {
+            Console.WriteLine("Senha incorreta. Acesso negado.");
+            return;
+        }
+
+        bool continuar = true;
+
+        while (continuar)
 {
 Console.Clear();
 Console.WriteLine("Bem-vindo ao Caixa Eletrônico!");
