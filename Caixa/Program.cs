@@ -144,11 +144,10 @@ class Conta
         {
             Console.WriteLine("Valor inválido.");
         }
-        else
-        {
+        
             saldo += valor;
             Console.WriteLine($"Depósito de {valor:C} realizado com sucesso.");
-        }
+        
     }
 
     public void ExibirExtrato()
