@@ -5,7 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        
+        // Criar conta com dados fornecidos pelo usuário
         Console.Write("Digite o nome do titular da conta: ");
         string titular = Console.ReadLine();
 
@@ -27,11 +27,11 @@ class Program
 
         Conta conta = new Conta(titular, tipoConta, senha, numeroConta, limite);
 
-        
+        // Solicitar senha para acesso
         Console.Write("Digite a senha para acessar a conta: ");
         string senhaInput = Console.ReadLine();
 
-        
+        // Verificar autenticação
         if (!conta.Autenticar(senhaInput))
         {
             Console.WriteLine("Senha incorreta. Acesso negado.");
@@ -41,6 +41,7 @@ class Program
         bool continuar = true;
 
         while (continuar)
+        {
             Console.Clear();
             Console.WriteLine("Bem-vindo ao Caixa Eletrônico!");
             Console.WriteLine("1. Saque");
@@ -51,10 +52,9 @@ class Program
             Console.WriteLine("6. Sair");
             Console.Write("Escolha uma opção: ");
             int opcao = int.Parse(Console.ReadLine());
-        switch (opcao)
-        {
 
-          
+            switch (opcao)
+            {
                 case 1:
                     Console.Write("Valor do saque: ");
                     double valorSaque = double.Parse(Console.ReadLine());
@@ -93,7 +93,7 @@ class Program
                 default:
                     Console.WriteLine("Opção inválida.");
                     break;
-        }
+            }
 
         if (continuar)
        {
