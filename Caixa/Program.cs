@@ -64,18 +64,18 @@ class Program
                     break;
 
                 case 3:
-                    Console.WriteLine("Digite o número da conta: (Ex: Número da conta: 12340)");
-                    conta = int.Parse(Console.ReadLine());
+                     Console.WriteLine("Digite o número da conta: (Ex: Número da conta: 12340)");
+                     conta = int.Parse(Console.ReadLine());
 
-                    Console.WriteLine("Digite o número da agência: (Ex: Agência: 1234567)");
+                     Console.WriteLine("Digite o número da agência: (Ex: Agência: 1234567)");
                      agencia = int.Parse(Console.ReadLine());
 
-                    Console.WriteLine("Confirme a ação com senha: ");
+                     Console.WriteLine("Confirme a ação com senha: ");
                      senha = int.Parse(Console.ReadLine());
 
-                    conta1.ExibirExtrato();
-                    conta1.SalvarExtratoEmArquivo();
-                    
+                     conta1.ExibirExtrato();
+                     conta1.SalvarExtratoEmArquivo();
+
                      Console.WriteLine("Obrigado pela preferência, volte sempre! ");
                     break;
                 case 4:

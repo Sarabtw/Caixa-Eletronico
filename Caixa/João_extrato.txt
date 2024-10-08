@@ -1,3 +1,0 @@
-Titular: João
-Tipo de Conta: Corrente
-Saldo Atual: R$ 346.565,00
