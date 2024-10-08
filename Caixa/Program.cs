@@ -64,9 +64,6 @@ class Program
                     break;
 
                 case 3:
-                    conta1.ExibirExtrato();
-                    conta1.SalvarExtratoEmArquivo();
-
                     Console.WriteLine("Digite o número da conta: (Ex: Número da conta: 12340)");
                     conta = int.Parse(Console.ReadLine());
 
@@ -76,6 +73,9 @@ class Program
                     Console.WriteLine("Confirme a ação com senha: ");
                      senha = int.Parse(Console.ReadLine());
 
+                    conta1.ExibirExtrato();
+                    conta1.SalvarExtratoEmArquivo();
+                    
                      Console.WriteLine("Obrigado pela preferência, volte sempre! ");
                     break;
                 case 4:
