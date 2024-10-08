@@ -134,7 +134,7 @@ class Conta
         else
         {
             saldo -= valor;
-            Console.WriteLine($"Saque de {valor:C} realizado com sucesso.");
+            Console.WriteLine($"Saque de {valor:C} será realizado depois de confirmar com senha.");
         }
     }
 
@@ -146,7 +146,7 @@ class Conta
         }
         
             saldo += valor;
-            Console.WriteLine($"Depósito de {valor:C} realizado com sucesso.");
+            Console.WriteLine($"Depósito de {valor:C} será realizado depois de confirmar com senha.");
         
     }
 
