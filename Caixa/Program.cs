@@ -54,54 +54,56 @@ class Program
         switch (opcao)
         {
 
-        case 1:
-        Console.Write("Informe o valor do saque: ");
-        double valorSaque = double.Parse(Console.ReadLine());
-        conta1.Sacar(valorSaque);
-        break;
+          
+                case 1:
+                    Console.Write("Valor do saque: ");
+                    double valorSaque = double.Parse(Console.ReadLine());
+                    conta.Sacar(valorSaque);
+                    break;
+                case 2:
+                    Console.Write("Valor do depósito: ");
+                    double valorDeposito = double.Parse(Console.ReadLine());
+                    conta.Depositar(valorDeposito);
+                    break;
+                case 3:
+                    conta.ExibirExtrato();
+                    conta.SalvarExtratoEmArquivo();
+                    break;
+                case 4:
+                    Console.Write("Digite o nome do destinatário: ");
+                    string destinatario = Console.ReadLine();
+                    Console.Write("Digite o valor da transferência: ");
+                    double valorTransferencia = double.Parse(Console.ReadLine());
+                    Conta contaDestino = new Conta(destinatario, "Corrente", "0000", "0002", 0);
+                    conta.Transferir(contaDestino, valorTransferencia);
+                    break;
+                case 5:
+                    Console.WriteLine("Aplicações financeiras:");
+                    Console.WriteLine("1. Poupança");
+                    Console.WriteLine("2. CDB");
+                    int tipoAplicacao = int.Parse(Console.ReadLine());
+                    Console.Write("Digite o valor da aplicação: ");
+                    double valorAplicacao = double.Parse(Console.ReadLine());
+                    conta.AplicacaoFinanceira(tipoAplicacao, valorAplicacao);
+                    break;
+                case 6:
+                    continuar = false;
+                    Console.WriteLine("Saindo...");
+                    break;
+                default:
+                    Console.WriteLine("Opção inválida.");
+                    break;
+        }
 
-        case 2:
-        Console.Write("Informe o valor do depósito: ");
-        double valorDeposito = double.Parse(Console.ReadLine());
-        conta1.Depositar(valorDeposito);
-        break; 
-
-        case 3:
-        conta1.ExibirExtrato();
-        conta1.SalvarExtratoEmArquivo();
-        break;
-
-        case 4:
-        Console.Write("Informe o valor da transferência: ");
-        double valorTransferencia = double.Parse(Console.ReadLine());
-        conta1.Transferir(conta2, valorTransferencia);
-        break;
-
-        case 5:
-        Console.WriteLine("Escolha uma aplicação: ");
-        Console.WriteLine("1. Poupança");
-        Console.WriteLine("2. CDB");
-        int opcaoAplicacao = int.Parse(Console.ReadLine());
-        conta1.Aplicar(opcaoAplicacao);
-        break;
-
-        case 6:
-        sair = true;
-        Console.WriteLine("Saindo...");
-        break;
-        default:
-        Console.WriteLine("Opção inválida.");
-        break;
-    
+        if (continuar)
+       {
+       Console.WriteLine("Pressione qualquer tecla para continuar.");
+       Console.ReadKey();
+       }
+    }
 }
 
-if (!sair)
-{
-Console.WriteLine("Pressione qualquer tecla para continuar.");
-Console.ReadKey();
-}
-}
-}
+
 
 
 class Conta
@@ -164,7 +166,7 @@ Console.WriteLine($"Saldo Atual: {saldo:C}");
 
 public void Transferir(Conta destino, double valor)
 {
-double taxa = 0.05; // Taxa de 5 centavos
+double taxa = 0.05; 
 double totalTransferencia = valor + taxa;
 if (totalTransferencia > saldo)
 {
