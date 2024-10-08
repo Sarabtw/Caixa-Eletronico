@@ -76,7 +76,7 @@ class Program
                      conta1.ExibirExtrato();
                      conta1.SalvarExtratoEmArquivo();
 
-                     Console.WriteLine("Obrigado pela preferência, volte sempre! ");
+                     
                     break;
                 case 4:
                     Console.WriteLine("Digite o número da conta: (Ex: Número da conta: 12340)");
@@ -163,6 +163,7 @@ class Conta
         Console.WriteLine($"Titular: {titular}");
         Console.WriteLine($"Tipo de Conta: {tipoConta}");
         Console.WriteLine($"Saldo Atual: {saldo:C}");
+        Console.WriteLine("Obrigado pela preferência, volte sempre! ");
     }
 
     public void Transferir(Conta destino, double valor)
