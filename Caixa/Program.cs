@@ -127,6 +127,10 @@ class Conta
         {
             Console.WriteLine("Valor inválido.");
         }
+        else if (valor > 300)
+        {
+            Console.WriteLine("Valor limite de saque atingido.")
+        }
         else
         {
             saldo -= valor;
