@@ -55,14 +55,6 @@ A interface foi construída usando a entrada e saída de dados pelo console, per
 
 ## Backlog
 
-Criar uma conta com nome e tipo de conta.
-
-Funcionalidade de saque.
-
-Funcionalidade de depósito.
-
-Implementar um sistema de login com senha para os usuários.
-
 Definir limites diários de saque por usuário.
 
 ## Conclusão
