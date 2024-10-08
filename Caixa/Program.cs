@@ -40,6 +40,8 @@ class Program
                     {
                      Console.WriteLine("Confirme o saque com senha: ");
                      senha = int.Parse(Console.ReadLine());
+
+                     Console.WriteLine("Obrigado pela preferência, volte sempre! ");
                     }
                     break;
                 case 2:
@@ -56,6 +58,8 @@ class Program
                     {
                       Console.WriteLine("Confirme o deposito com senha: ");
                       senha = int.Parse(Console.ReadLine());
+
+                      Console.WriteLine("Obrigado pela preferência, volte sempre! ");
                     }
                     break;
 
@@ -71,6 +75,8 @@ class Program
 
                     Console.WriteLine("Confirme a ação com senha: ");
                      senha = int.Parse(Console.ReadLine());
+
+                     Console.WriteLine("Obrigado pela preferência, volte sempre! ");
                     break;
                 case 4:
                     Console.WriteLine("Digite o número da conta: (Ex: Número da conta: 12340)");
@@ -87,6 +93,8 @@ class Program
                      {
                        Console.WriteLine("Confirme a transferência com senha: ");
                        senha = int.Parse(Console.ReadLine());
+
+                       Console.WriteLine("Obrigado pela preferência, volte sempre! ");
                      } 
                     break;
                 case 5:
