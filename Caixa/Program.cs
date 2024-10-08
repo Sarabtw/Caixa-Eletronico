@@ -41,70 +41,68 @@ class Program
         bool continuar = true;
 
         while (continuar)
-{
-Console.Clear();
-Console.WriteLine("Bem-vindo ao Caixa Eletrônico!");
-Console.Write("Digite sua senha: ");
-string senha = Console.ReadLine();
-if (!conta1.Autenticar(senha))
-{
-Console.WriteLine("Senha incorreta. Tente novamente.");
-continue;
-}
+            Console.Clear();
+            Console.WriteLine("Bem-vindo ao Caixa Eletrônico!");
+            Console.WriteLine("1. Saque");
+            Console.WriteLine("2. Depósito");
+            Console.WriteLine("3. Extrato");
+            Console.WriteLine("4. Transferência");
+            Console.WriteLine("5. Aplicações Financeiras");
+            Console.WriteLine("6. Sair");
+            Console.Write("Escolha uma opção: ");
+            int opcao = int.Parse(Console.ReadLine());
+        switch (opcao)
+        {
 
-Console.WriteLine("1. Saque");
-Console.WriteLine("2. Depósito");
-Console.WriteLine("3. Extrato");
-Console.WriteLine("4. Transferência");
-Console.WriteLine("5. Aplicação Financeira");
-Console.WriteLine("6. Sair");
-Console.Write("Escolha uma opção: ");
-int opcao = int.Parse(Console.ReadLine());
-switch (opcao)
-{
-case 1:
-Console.Write("Informe o valor do saque: ");
-double valorSaque = double.Parse(Console.ReadLine());
-conta1.Sacar(valorSaque);
-break;
-case 2:
-Console.Write("Informe o valor do depósito: ");
-double valorDeposito = double.Parse(Console.ReadLine());
-conta1.Depositar(valorDeposito);
-break;
-case 3:
-conta1.ExibirExtrato();
-conta1.SalvarExtratoEmArquivo();
-break;
-case 4:
-Console.Write("Informe o valor da transferência: ");
-double valorTransferencia = double.Parse(Console.ReadLine());
-conta1.Transferir(conta2, valorTransferencia);
-break;
-case 5:
-Console.WriteLine("Escolha uma aplicação: ");
-Console.WriteLine("1. Poupança");
-Console.WriteLine("2. CDB");
-int opcaoAplicacao = int.Parse(Console.ReadLine());
-conta1.Aplicar(opcaoAplicacao);
-break;
-case 6:
-sair = true;
-Console.WriteLine("Saindo...");
-break;
-default:
-Console.WriteLine("Opção inválida.");
-break;
+        case 1:
+        Console.Write("Informe o valor do saque: ");
+        double valorSaque = double.Parse(Console.ReadLine());
+        conta1.Sacar(valorSaque);
+        break;
+
+        case 2:
+        Console.Write("Informe o valor do depósito: ");
+        double valorDeposito = double.Parse(Console.ReadLine());
+        conta1.Depositar(valorDeposito);
+        break; 
+
+        case 3:
+        conta1.ExibirExtrato();
+        conta1.SalvarExtratoEmArquivo();
+        break;
+
+        case 4:
+        Console.Write("Informe o valor da transferência: ");
+        double valorTransferencia = double.Parse(Console.ReadLine());
+        conta1.Transferir(conta2, valorTransferencia);
+        break;
+
+        case 5:
+        Console.WriteLine("Escolha uma aplicação: ");
+        Console.WriteLine("1. Poupança");
+        Console.WriteLine("2. CDB");
+        int opcaoAplicacao = int.Parse(Console.ReadLine());
+        conta1.Aplicar(opcaoAplicacao);
+        break;
+
+        case 6:
+        sair = true;
+        Console.WriteLine("Saindo...");
+        break;
+        default:
+        Console.WriteLine("Opção inválida.");
+        break;
+    
 }
 
 if (!sair)
 {
-Console.WriteLine("Pressione qualquer tecla para continuar...");
+Console.WriteLine("Pressione qualquer tecla para continuar.");
 Console.ReadKey();
 }
 }
 }
-}
+
 
 class Conta
 {
@@ -119,7 +117,7 @@ this.titular = titular;
 this.tipoConta = tipoConta;
 this.saldo = 0;
 this.senha = senha;
-this.limite = 1000; // Definindo um limite de saque padrão
+this.limite = 1000; 
 }
 
 public bool Autenticar(string senha)
@@ -199,12 +197,12 @@ saldo -= valorAplicacao;
 if (tipo == 1)
 {
 Console.WriteLine($"Valor de {valorAplicacao:C} aplicado na Poupança.");
-// Lógica para Poupança
+
 }
 else if (tipo == 2)
 {
 Console.WriteLine($"Valor de {valorAplicacao:C} aplicado em CDB.");
-// Lógica para CDB
+
 }
 else
 {
