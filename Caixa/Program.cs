@@ -5,7 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Criar conta com dados fornecidos pelo usuário
+        
         Console.Write("Digite o nome do titular da conta: ");
         string titular = Console.ReadLine();
 
@@ -27,11 +27,11 @@ class Program
 
         Conta conta = new Conta(titular, tipoConta, senha, numeroConta, limite);
 
-        // Solicitar senha para acesso
+       
         Console.Write("Digite a senha para acessar a conta: ");
         string senhaInput = Console.ReadLine();
 
-        // Verificar autenticação
+    
         if (!conta.Autenticar(senhaInput))
         {
             Console.WriteLine("Senha incorreta. Acesso negado.");
@@ -229,4 +229,5 @@ class Conta
         }
         Console.WriteLine($"Extrato salvo em: {nomeArquivo}");
     }
+}
 }
