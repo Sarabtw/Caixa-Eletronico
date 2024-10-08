@@ -180,8 +180,9 @@ class Conta
         {
             saldo -= valor;
             destino.Depositar(valor);
-            Console.WriteLine($"Transferência de {valor:C} para {destino.titular} realizada com sucesso.");
+            
         }
+         Console.WriteLine($"Transferência de {valor:C} para {destino.titular} realizada com sucesso.");
     }
 
     public void SalvarExtratoEmArquivo()
